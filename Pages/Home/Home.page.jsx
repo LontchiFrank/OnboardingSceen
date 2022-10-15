@@ -1,15 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 
 function Home(props) {
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
         <Image source={require("../../img/1.png")} style={styles.img} />
-        <Text style={styles.detail}>
-          With an Updated motor, and integrated anti-theft tech the Frank
-          scooters are custom-tuned for the ultimate riding experience.
-        </Text>
+        <View style={styles.box}>
+          <Text style={styles.title}>Welcome</Text>
+          <Text style={styles.detail}>
+            With an Updated motor, and integrated anti-theft tech the Frank
+            scooters are custom-tuned for the ultimate riding experience.
+          </Text>
+        </View>
+      </View>
+      <View style={styles.nav}>
+        <Pressable style={styles.btn1}></Pressable>
+        <Pressable style={styles.btn2}></Pressable>
       </View>
     </View>
   );
@@ -29,9 +36,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  title: {
+    marginLeft: 24,
+    color: "black",
+    fontSize: 28,
+    fontWeight: "bold",
+  },
+  box: {},
   img: {
     height: "60%",
     width: "90%",
+    marginBottom: 20,
     resizeMode: "contain",
     borderTopRightRadius: 50,
     borderBottomLeftRadius: 50,
@@ -43,5 +58,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     lineHeight: 30,
     marginTop: 30,
+  },
+  nav: {
+    width: "100%",
+    display: "flex",
+  },
+  btn1: {
+    width: "20%",
+    height: "20%",
+    backgroundColor: "purple",
+    borderRadius: "50%",
   },
 });
