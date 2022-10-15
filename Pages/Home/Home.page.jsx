@@ -1,6 +1,7 @@
 import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 function Home(props) {
   return (
@@ -16,12 +17,24 @@ function Home(props) {
         </View>
       </View>
       <View style={styles.nav}>
-        <Pressable style={styles.btn1}>
-          <AntDesign name="arrowleft" color="#fff" size={25} />
-        </Pressable>
-        <Pressable style={styles.btn2}>
-          <AntDesign name="arrowright" color="#fff" size={25} />
-        </Pressable>
+        <View style={styles.steps}>
+          <View style={styles.step1}></View>
+          <View style={styles.step1}></View>
+          <View style={styles.step1}></View>
+          <View style={styles.step1}></View>
+        </View>
+        <View style={styles.holdPress}>
+          <TouchableOpacity>
+            <Pressable style={styles.btn1}>
+              <AntDesign name="arrowleft" color="#fff" size={25} />
+            </Pressable>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Pressable style={styles.btn2}>
+              <AntDesign name="arrowright" color="#fff" size={25} />
+            </Pressable>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -59,36 +72,55 @@ const styles = StyleSheet.create({
   detail: {
     color: "#000",
     fontSize: 18,
-    textAlign: "center",
+    textAlign: "left",
     paddingHorizontal: 20,
     lineHeight: 30,
-    marginTop: 30,
+    marginTop: 10,
   },
   nav: {
     width: "100%",
-    // height: 400,
     paddingHorizontal: 20,
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-end",
-    // alignItems: "flex-end",
   },
   btn1: {
-    width: 66,
-    height: 66,
+    width: 58,
+    height: 58,
     backgroundColor: "#4919a7",
-    borderRadius: 66 / 2,
+    borderRadius: 58 / 2,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 8,
+  },
+  btn2: {
+    width: 58,
+    height: 58,
+    backgroundColor: "#4919a7",
+    borderRadius: 58 / 2,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
-  btn2: {
-    width: 66,
-    height: 66,
-    backgroundColor: "#4919a7",
-    borderRadius: 66 / 2,
+  holdPress: {
+    paddingTop: 30,
+    flexDirection: "row",
+  },
+  steps: {
+    width: "60%",
+    paddingTop: 40,
     display: "flex",
-    justifyContent: "center",
+    flexDirection: "row",
+    // justifyContent: "flex-end",
     alignItems: "center",
+  },
+  step1: {
+    width: 8,
+    height: 8,
+    backgroundColor: "#4919a7",
+    borderRadius: 58 / 2,
+
+    marginRight: 4,
   },
 });
