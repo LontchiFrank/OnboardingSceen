@@ -1,4 +1,5 @@
 import React from "react";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 
 function Home(props) {
@@ -15,8 +16,12 @@ function Home(props) {
         </View>
       </View>
       <View style={styles.nav}>
-        <Pressable style={styles.btn1}></Pressable>
-        <Pressable style={styles.btn2}></Pressable>
+        <Pressable style={styles.btn1}>
+          <AntDesign name="arrowleft" color="#fff" size={25} />
+        </Pressable>
+        <Pressable style={styles.btn2}>
+          <AntDesign name="arrowright" color="#fff" size={25} />
+        </Pressable>
       </View>
     </View>
   );
@@ -61,12 +66,29 @@ const styles = StyleSheet.create({
   },
   nav: {
     width: "100%",
+    // height: 400,
+    paddingHorizontal: 20,
     display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    // alignItems: "flex-end",
   },
   btn1: {
-    width: "20%",
-    height: "20%",
-    backgroundColor: "purple",
-    borderRadius: "50%",
+    width: 66,
+    height: 66,
+    backgroundColor: "#4919a7",
+    borderRadius: 66 / 2,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  btn2: {
+    width: 66,
+    height: 66,
+    backgroundColor: "#4919a7",
+    borderRadius: 66 / 2,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
