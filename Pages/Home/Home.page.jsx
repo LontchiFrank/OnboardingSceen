@@ -8,14 +8,12 @@ function Home(props) {
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
-        <Swipeable>
-          <Content
-            title="Welcome"
-            img={require("../../img/1.png")}
-            detail="With an Updated motor, and integrated anti-theft tech the Frank
+        <Content
+          title="Welcome"
+          img={require("../../img/1.png")}
+          detail="With an Updated motor, and integrated anti-theft tech the Frank
           scooters are custom-tuned for the ultimate riding experience."
-          />
-        </Swipeable>
+        />
       </View>
       <View style={styles.nav}>
         <View style={styles.steps}>
