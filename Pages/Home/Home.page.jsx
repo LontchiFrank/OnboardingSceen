@@ -1,20 +1,21 @@
 import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity, Swipeable } from "react-native-gesture-handler";
+import Content from "../../Components/Content/Content.component";
 
 function Home(props) {
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
-        <Image source={require("../../img/1.png")} style={styles.img} />
-        <View style={styles.box}>
-          <Text style={styles.title}>Welcome</Text>
-          <Text style={styles.detail}>
-            With an Updated motor, and integrated anti-theft tech the Frank
-            scooters are custom-tuned for the ultimate riding experience.
-          </Text>
-        </View>
+        <Swipeable>
+          <Content
+            title="Welcome"
+            img={require("../../img/1.png")}
+            detail="With an Updated motor, and integrated anti-theft tech the Frank
+          scooters are custom-tuned for the ultimate riding experience."
+          />
+        </Swipeable>
       </View>
       <View style={styles.nav}>
         <View style={styles.steps}>
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
   step1: {
     width: 8,
     height: 8,
-    backgroundColor: "#4919a7",
+    backgroundColor: "#b394ef",
     borderRadius: 58 / 2,
 
     marginRight: 4,
