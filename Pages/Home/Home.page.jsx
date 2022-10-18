@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { TouchableOpacity, Swipeable } from "react-native-gesture-handler";
 import Content from "../../Components/Content/Content.component";
 
 function Home(props) {
+  const [data, setData] = useState([
+    {
+      title: "Get Started",
+      img: "../../img/1.png",
+      detail:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
+    },
+    {
+      title: "Welcome",
+      img: "../../img/img2.png",
+      detail:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
+    },
+    {
+      title: "Get Started",
+      img: "../../img/3.png",
+      detail:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
+    },
+    {
+      title: "Get Started",
+      img: "../../img/4.png",
+      detail:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
+    },
+  ]);
+
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
