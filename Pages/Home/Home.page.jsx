@@ -19,13 +19,13 @@ function Home(props) {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
     {
-      title: "Get Started",
+      title: "Discover",
       img: "../../img/3.png",
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
     {
-      title: "Get Started",
+      title: "Make Up UI KIT",
       img: "../../img/4.png",
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
