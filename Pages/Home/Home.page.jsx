@@ -31,6 +31,17 @@ function Home(props) {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
   ]);
+  const [index, setIndex] = useState(0);
+
+  const addIndex = () => {
+    setIndex(index + 1);
+  };
+
+  const getElement = (data) => {
+    return data.slice(0, index).map((el) => {
+      <Content title={el.title} img={el.img} detail={el.detail} />;
+    });
+  };
 
   return (
     <View style={styles.container}>
@@ -41,6 +52,7 @@ function Home(props) {
           detail="With an Updated motor, and integrated anti-theft tech the Frank
           scooters are custom-tuned for the ultimate riding experience."
         />
+        {/* {getElement(data, index)} */}
       </View>
       <View style={styles.nav}>
         <View style={styles.steps}>
@@ -56,7 +68,7 @@ function Home(props) {
             </Pressable>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Pressable style={styles.btn2}>
+            <Pressable style={styles.btn2} onPress={() => addIndex()}>
               <AntDesign name="arrowright" color="#fff" size={25} />
             </Pressable>
           </TouchableOpacity>
