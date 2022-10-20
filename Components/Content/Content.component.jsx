@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 
-function Content({ title, img, detail }) {
+function Content({ item }) {
   return (
     <View>
-      <Image source={img} style={styles.img} />
+      <Image source={item.img} style={styles.img} />
       <View style={styles.box}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.detail}>{detail}</Text>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.detail}>{item.detail}</Text>
       </View>
     </View>
   );
