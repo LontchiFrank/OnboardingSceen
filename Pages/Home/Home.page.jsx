@@ -8,25 +8,25 @@ function Home(props) {
   const [data, setData] = useState([
     {
       title: "Get Started",
-      img: "../../img/1.png",
+      img: require("../../img/1.png"),
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
     {
       title: "Welcome",
-      img: "../../img/img2.png",
+      img: require("../../img/img2.png"),
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
     {
       title: "Discover",
-      img: "../../img/3.png",
+      img: require("../../img/3.png"),
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
     {
       title: "Make Up UI KIT",
-      img: "../../img/4.png",
+      img: require("../../img/4.png"),
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
@@ -46,13 +46,18 @@ function Home(props) {
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
-        <Content
+        {/* <Content
           title="Welcome"
           img={require("../../img/img2.png")}
           detail="With an Updated motor, and integrated anti-theft tech the Frank
           scooters are custom-tuned for the ultimate riding experience."
+        /> */}
+        <FlatList
+          data={data}
+          contentContainerStyle={{ height: "75%" }}
+          showHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <Content item={item} />}
         />
-        {/* {getElement(data, index)} */}
       </View>
       <View style={styles.nav}>
         <View style={styles.steps}>
