@@ -3,7 +3,13 @@ import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 
 function Content({ item }) {
   return (
-    <View>
+    <View
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Image source={item.img} style={styles.img} />
       <View style={styles.box}>
         <Text style={styles.title}>{item.title}</Text>

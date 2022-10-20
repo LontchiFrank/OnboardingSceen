@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Pressable,
+  FlatList,
+} from "react-native";
 import { TouchableOpacity, Swipeable } from "react-native-gesture-handler";
 import Content from "../../Components/Content/Content.component";
 
@@ -20,13 +27,13 @@ function Home(props) {
     },
     {
       title: "Discover",
-      img: require("../../img/3.png"),
+      img: require("../../img/img3.png"),
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
     {
       title: "Make Up UI KIT",
-      img: require("../../img/4.png"),
+      img: require("../../img/img4.png"),
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam risus, interdum eu arcu at, lacinia rutrum metus. Proin eu fermentum purus.",
     },
@@ -46,15 +53,9 @@ function Home(props) {
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
-        {/* <Content
-          title="Welcome"
-          img={require("../../img/img2.png")}
-          detail="With an Updated motor, and integrated anti-theft tech the Frank
-          scooters are custom-tuned for the ultimate riding experience."
-        /> */}
         <FlatList
           data={data}
-          contentContainerStyle={{ height: "75%" }}
+          contentContainerStyle={{ height: "80%" }}
           showHorizontalScrollIndicator={false}
           renderItem={({ item }) => <Content item={item} />}
         />
