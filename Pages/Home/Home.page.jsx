@@ -48,7 +48,7 @@ function Home(props) {
       <View style={styles.contain}>
         <Content
           title="Welcome"
-          img={require("../../img/1.png")}
+          img={require("../../img/img2.png")}
           detail="With an Updated motor, and integrated anti-theft tech the Frank
           scooters are custom-tuned for the ultimate riding experience."
         />
