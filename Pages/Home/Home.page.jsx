@@ -4,7 +4,7 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
+  SafeAreaView,
   Pressable,
   FlatList,
 } from "react-native";
@@ -12,7 +12,7 @@ import { TouchableOpacity, Swipeable } from "react-native-gesture-handler";
 import Content from "../../Components/Content/Content.component";
 
 function Home(props) {
-  const [data, setData] = useState([
+  const [slides, setSlides] = useState([
     {
       title: "Get Started",
       img: require("../../img/1.png"),
@@ -44,18 +44,21 @@ function Home(props) {
     setIndex(index + 1);
   };
 
-  const getElement = (data) => {
-    return data.slice(0, index).map((el) => {
-      <Content title={el.title} img={el.img} detail={el.detail} />;
-    });
-  };
+  // const getElement = (data) => {
+  //   return data.slice(0, index).map((el) => {
+  //     <Content title={el.title} img={el.img} detail={el.detail} />;
+  //   });
+  // };
 
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
         <FlatList
-          data={data}
-          contentContainerStyle={{ height: "80%" }}
+          pagingEnabled
+          data={slides}
+          contentContainerStyle={{
+            height: "79%",
+          }}
           showHorizontalScrollIndicator={false}
           renderItem={({ item }) => <Content item={item} />}
         />
@@ -94,9 +97,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   contain: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    flex: 1,
+    marginTop: 33,
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
   },
   title: {
     marginLeft: 24,

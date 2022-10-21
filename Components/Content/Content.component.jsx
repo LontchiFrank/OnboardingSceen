@@ -5,15 +5,22 @@ function Content({ item }) {
   return (
     <View
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        width: "100%",
+        height: "100%",
       }}
     >
-      <Image source={item.img} style={styles.img} />
-      <View style={styles.box}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.detail}>{item.detail}</Text>
+      <View
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Image source={item.img} style={styles.img} />
+        <View style={styles.box}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.detail}>{item.detail}</Text>
+        </View>
       </View>
     </View>
   );
