@@ -1,26 +1,26 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Pressable,
+  Dimensions,
+} from "react-native";
 
 function Content({ item }) {
   return (
     <View
       style={{
-        width: "100%",
-        height: "100%",
+        width: Dimensions.get("window").width * 1,
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Image source={item.img} style={styles.img} />
-        <View style={styles.box}>
-          <Text style={styles.title}>{item.title}</Text>
-          <Text style={styles.detail}>{item.detail}</Text>
-        </View>
+      <Image source={item.img} style={styles.img} />
+      <View style={styles.box}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.detail}>{item.detail}</Text>
       </View>
     </View>
   );
@@ -47,10 +47,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   img: {
-    height: "60%",
-    width: "90%",
+    height: 320,
+    width: Dimensions.get("screen").width * 0.9,
     marginBottom: 20,
-    resizeMode: "contain",
     borderTopRightRadius: 50,
     borderBottomLeftRadius: 50,
   },

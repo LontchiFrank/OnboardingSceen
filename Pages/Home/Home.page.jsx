@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Pressable,
   FlatList,
+  Dimensions,
 } from "react-native";
 import { TouchableOpacity, Swipeable } from "react-native-gesture-handler";
 import Content from "../../Components/Content/Content.component";
@@ -44,22 +45,14 @@ function Home(props) {
     setIndex(index + 1);
   };
 
-  // const getElement = (data) => {
-  //   return data.slice(0, index).map((el) => {
-  //     <Content title={el.title} img={el.img} detail={el.detail} />;
-  //   });
-  // };
-
   return (
     <View style={styles.container}>
       <View style={styles.contain}>
         <FlatList
           pagingEnabled
           data={slides}
-          contentContainerStyle={{
-            height: "79%",
-          }}
-          showHorizontalScrollIndicator={false}
+          horizontal
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <Content item={item} />}
         />
       </View>
@@ -91,17 +84,17 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    width: "100%",
-    height: "100%",
+    flex: 1,
+    // width: "100%",
+    // height: "100%",
     backgroundColor: "white",
   },
   contain: {
-    flex: 1,
+    // flex: 1,
     marginTop: 33,
     // display: "flex",
-    // justifyContent: "center",
-    // alignItems: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     marginLeft: 24,
@@ -127,11 +120,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   nav: {
-    width: "100%",
     paddingHorizontal: 20,
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    flex: 1,
+    marginBottom: 23,
   },
   btn1: {
     width: 58,
